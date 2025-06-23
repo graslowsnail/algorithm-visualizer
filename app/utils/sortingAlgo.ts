@@ -1,35 +1,40 @@
 // insertion sort
 
-const unsorted: number [] = [64, 34, 25, 12, 22, 11, 90]
-//const unsorted: number [] = [10, 50, 30]
-let sorted: number [] = []
+export const createArray = (userInput: number) => {
+    const tempArray: number [] = []
+    const usedNumbers = new Set<number>() // keep track of what numbers we have added 
+    const maxRange = Math.max(userInput * 10, 1000)
 
-console.log("original unsorted", unsorted)
+    while(tempArray.length < userInput) {
+        let randomNumber = Math.floor(Math.random() * maxRange) + 1
 
-sorted.push(unsorted[0])
-console.log("Sorted", sorted)
-
-unsorted.shift() // remove first element in arr
-console.log("unsorted", unsorted)
-
-for( let i = 0; i < unsorted.length; i++ ){
-    const originalLength = sorted.length
-    for( let y = 0; y <= sorted.length; y++){
-        // if unsorted[i] is less than sorteds current index 
-        if( unsorted[i] < sorted[y]){
-            // splice(index, deleteCount, item to add)
-            // y = where to start, the position
-            // 0 = how many items to delete(we dont want to delete anyting)
-            // unsorted[i] = what to insert
-            sorted.splice(y, 0, unsorted[i])
-            break;
-        }
-        if(y === originalLength){
-            sorted.push(unsorted[i])
-            break;
+        if(!usedNumbers.has(randomNumber)){
+            usedNumbers.add(randomNumber)
+            tempArray.push(randomNumber)
         }
     }
+    return tempArray
 }
 
+export const sortArray = (tempArray: number []) => {
+    let unsortedArray: number [] = tempArray;
+    let sortedArray: number [] = []
 
-console.log('new sorted  list lol', sorted)
+    sortedArray.push(unsortedArray[0]) // add first number into sorted array
+    unsortedArray.shift()// remove first element in unsoreted array
+
+    for( let x = 0; x < unsortedArray.length; x++){
+        const originalLength = sortedArray.length
+        for( let y = 0; y <= sortedArray.length; y++){
+            if(unsortedArray[x] < sortedArray[y]){
+                sortedArray.splice(y, 0, unsortedArray[x])
+                break
+            }
+            if(y === originalLength){
+                sortedArray.push(unsortedArray[x])
+                break
+            }
+        }
+    }
+    return sortedArray
+}
