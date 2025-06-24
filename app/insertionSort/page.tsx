@@ -49,7 +49,6 @@ export default function Home() {
 
     return (
         <div className="min-h-screen p-8">
-            <main>
                 <h1>Insertion Sort Visualizer</h1>
                 <p>See how the Insertion Sort works!</p>
                 <input
@@ -60,15 +59,15 @@ export default function Home() {
                 className="border border-black"
                 />
 
-                <button className="border border-black" onClick={handleClick}>
+                <button className="m-1 border border-black" onClick={handleClick}>
                 submit value
                 </button>
 
-                <button className="border border-black" onClick={handleSortClick}>
+                <button className="m-1 border border-black" onClick={handleSortClick}>
                 Sort your array
                 </button>
 
-                <button onClick={() => setShowModal(true)}>About This Algo</button>
+                <button className="m-1 border border-black" onClick={() => setShowModal(true)}>About This Algo</button>
 
                 <div className="flex items-end w-full h-[70vh] mt-8"> {/* 70% viewport height */}
                     {userArray.map((value, index) => (
@@ -83,7 +82,6 @@ export default function Home() {
                         />
                     ))}
                 </div>
-            </main>
 
             <AlgoModal
                 isOpen={showModal}
