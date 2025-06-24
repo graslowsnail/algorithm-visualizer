@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Algorithm Visualizer 🔥
 
-## Getting Started
+Yoo select an algo to visualize! This is an interactive web app that helps you understand sorting algorithms through visual animations.
 
-First, run the development server:
+## 🚀 Live Demo
+
+Check it out: [https://algorithm-visualizer-iota-one.vercel.app/](https://algorithm-visualizer-iota-one.vercel.app/)
+
+## 📚 Algorithms Included
+
+- **Insertion Sort** - Takes each element and finds the correct position in the already-sorted portion
+- **Bubble Sort** - Compares adjacent elements and swaps them if they're in wrong order
+
+## 🛠️ Built With
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Deployed on Vercel
+
+## 🏃‍♂️ Getting Started
+
+First, install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+```
+
+Then, run the development server:
+
+```bash
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Interactive Visualizations** - Watch algorithms work step by step
+- **Clean UI** - Simple, focused interface for learning
+- **Algorithm Info** - Learn about time complexity and how each algorithm works
+- **Responsive Design** - Works on desktop and mobile
 
-## Learn More
+## 🎓 Learning Focus
 
-To learn more about Next.js, take a look at the following resources:
+This project was built to understand algorithms from the ground up - no copy-pasting, just pure logic and understanding. Each algorithm is implemented with detailed comments explaining every step.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔥 What's Next?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Selection Sort
+- Quick Sort  
+- Merge Sort
+- Binary Search
+- And more algorithms to come!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built with passion for understanding algorithms, not just memorizing them* 💪
