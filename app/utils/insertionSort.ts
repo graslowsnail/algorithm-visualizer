@@ -1,10 +1,9 @@
 export const createArray = (userInput: number) => {
-    const tempArray: number [] = []
-    const usedNumbers = new Set<number>() // keep track of what numbers we have added 
-    const maxRange = Math.max(userInput * 10, 1000)
+    const tempArray: number[] = []
+    const usedNumbers = new Set<number>()
 
     while(tempArray.length < userInput) {
-        let randomNumber = Math.floor(Math.random() * maxRange) + 1
+        let randomNumber = Math.floor(Math.random() * userInput) + 1  // 1 to userInput!
 
         if(!usedNumbers.has(randomNumber)){
             usedNumbers.add(randomNumber)
@@ -15,24 +14,50 @@ export const createArray = (userInput: number) => {
 }
 
 // insertion sort
-export const insertionSort = (tempArray: number []) => {
-    const unsortedList: number [] =  tempArray
-    const sortedList: number [] = []
-    sortedList.push(unsortedList[0])
-    unsortedList.shift()
+export const insertionSort = (tempArray: number[]) => {
+    const steps = []
+    const array = [...tempArray] // Work with copy
     
-    while(unsortedList.length > 0) {
-        // for each element in sorted List
-        for(let i = 0; i<=sortedList.length; i++){
-            if(i === sortedList.length){ // if the current index is = to the length of sortedList.length (WERE AT THE END)
-                sortedList.push(unsortedList[0]) // add unsortedList[0] to the end of sortedList
-                break;
-            } else if (unsortedList[0] < sortedList[i]) { // if unsorted[0] is less than sortedList[i]
-                sortedList.splice(i, 0, unsortedList[0]) // add the first value BEFORE index(i)
-                break; // stop checking
-            }
+    // Add initial state
+    steps.push({
+        array: [...array],
+        comparing: [],
+        action: "start"
+    })
+    
+    // Your existing logic but capture each step:
+    for (let i = 1; i < array.length; i++) {
+        let current = array[i]
+        let j = i - 1
+        
+        // Show comparison
+        steps.push({
+            array: [...array],
+            comparing: [i, j],
+            action: "comparing"
+        })
+        
+        while (j >= 0 && array[j] > current) {
+            array[j + 1] = array[j] // Shift element
+            
+            // Show the shift
+            steps.push({
+                array: [...array],
+                comparing: [j, j + 1],
+                action: "shifting"
+            })
+            
+            j--
         }
-        unsortedList.shift()
+        array[j + 1] = current // Insert element
+        
+        // Show insertion
+        steps.push({
+            array: [...array],
+            comparing: [j + 1],
+            action: "inserted"
+        })
     }
-    return sortedList
+    
+    return steps
 }
