@@ -1,8 +1,7 @@
 'use client'
-import './utils/sortingAlgo'
 import { useState } from 'react';
-import { createArray } from './utils/sortingAlgo';
-import { sortArray } from './utils/sortingAlgo';
+import { createArray } from './utils/insertionSort';
+import { insertionSort } from './utils/insertionSort';
 
 export default function Home() {
   const [userInput, setUserInput] = useState('')
@@ -19,7 +18,8 @@ export default function Home() {
     console.log('temp array in componet ', newArray)
   }
   const handleSortClick = () => {
-    const sortedArray = sortArray(userArray)
+    //const sortedArray = sortArray(userArray)
+    const sortedArray = insertionSort(userArray)
     console.log(sortedArray)
   }
 
