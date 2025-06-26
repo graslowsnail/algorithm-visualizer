@@ -1,5 +1,5 @@
 'use client'
-import { bubbleSort } from "../utils/bubbleSort1";
+import { bubbleSort } from "../utils/bubbleSort/bubbleSort1";
 import { useState } from "react";
 import AlgoModal from '@/app/components/AlgoModal';
 
