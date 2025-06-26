@@ -15,6 +15,11 @@ export default function Home() {
             Bubble Sort
           </button>
         </Link>
+        <Link href="/binarySearch">
+          <button className="m-1 border border-black px-4 py-2">
+            Binary Search
+          </button>
+        </Link>
       </main>
     </div>
   );
